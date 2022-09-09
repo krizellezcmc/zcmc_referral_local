@@ -1,7 +1,11 @@
 
 <?php
 
-$host ="ZCMCHISSERVER\ZCMCSQL"; 
+
+header('Access-Control-Allow-Origin: *');
+header("Access-Control-Allow-Headers: *");
+
+$host = "ZCMCHISSERVER\ZCMCSQL"; 
 
 $options = [
   "Database" => "TrainingDB_HS8",

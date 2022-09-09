@@ -2,12 +2,13 @@
 
     include '../connection/local_db.php';
     
-    // Read data from Bizbox
-    $query = "SELECT                                                                                  
+    // Read data from   
+    $query = "SELECT         
+                reg.PK_psPatRegisters as patRegistersNo,                                                                             
                 pat.patid, 
                 dbo.udf_GetFullName (pat.PK_emdPatients) as patientname,
                 reg.referredDate as referreddate, 
-                reg.referredfrom as referredfrom,
+				reg.referredFromHCI as referredFrom,
                 reg.registrydate,
                 reg.dischdiagnosis,
                 reg.finaldiagnosis,
@@ -23,7 +24,6 @@
     while($row = sqlsrv_fetch_array($getData, SQLSRV_FETCH_ASSOC)){
         $bb_array[] = $row;
     }   
-
 
 
    
